@@ -38,8 +38,10 @@ public class CollegeResources {
 		logger.info("inside save inside college controller ");
 		String msg= collegeService.save(collegeEntity);
 		if(msg=="Data Saved") {
+			logger.info("msg is data saved data successfull inside save inside college controller ");
 			return new ResponseEntity<String>(msg, HttpStatus.OK);
 		}else {
+			logger.info("msg is not data saved data unsuccessfull  inside save inside college controller ");
 			return new ResponseEntity<String>(msg, HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -48,8 +50,10 @@ public class CollegeResources {
 		logger.info("inside update inside college controller");
 		String msg= collegeService.updateByCollegeName(collegeEntity);
 		if(msg=="Update SuccessFull") {
+			logger.info("msg is Update SuccessFull inside update inside college controller");
 			return new ResponseEntity<String>(msg, HttpStatus.OK);
 		}else {
+			logger.info("msg is Update UnSuccessFull inside update inside college controller");
 			return new ResponseEntity<String>(msg, HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -58,8 +62,10 @@ public class CollegeResources {
 		logger.info("inside delete inside college controller");
 		String msg=collegeService.deleteByCollegeName(collegeName);
 		if(msg=="Delete Successfull") {
+			logger.info("msg is Delete Successfull inside delete inside college controller");
 			return new ResponseEntity<String>(msg, HttpStatus.OK);
 		}else {
+			logger.info(" msg is Delete UnSuccessfull inside delete inside college controller");
 			return new ResponseEntity<String>(msg, HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -68,8 +74,10 @@ public class CollegeResources {
 		logger.info("inside  save all inside controller ");
 		int i=collegeService.saveAll(collegeEntities);
 		if(i>0) {
+			logger.info("i >0 inside  save all inside controller ");
 			return new ResponseEntity<Integer>(i, HttpStatus.OK);
 		}else {
+			logger.info("i<0 inside  save all inside controller ");
 			return new ResponseEntity<Integer>(i, HttpStatus.FAILED_DEPENDENCY);
 		}
 		
@@ -79,8 +87,10 @@ public class CollegeResources {
 		logger.info("inside get all by city name inside controller");
 		List<CollegeEntity> lists= collegeService.getAllByCityName(cityName);
 		if(lists == null) {
+			logger.info("lists is null inside get all by city name inside controller");
 			return new ResponseEntity<List<CollegeEntity>>(lists, HttpStatus.BAD_REQUEST);
 		}else {
+			logger.info("lists is not null inside get all by city name inside controller");
 			return new ResponseEntity<List<CollegeEntity>>(lists, HttpStatus.ACCEPTED);
 		}
 	}
@@ -89,8 +99,10 @@ public class CollegeResources {
 		logger.info("inside update zipcode city name inside controller");
 		List<CollegeEntity> lists=collegeService.updateZipCodeByCityName(collegeEntity.getCityName(),collegeEntity.getZipCode());
 		if(lists == null) {
+			logger.info(" lists is null inside update zipcode city name inside controller");
 			return new ResponseEntity<List<CollegeEntity>>(lists, HttpStatus.BAD_REQUEST);
 		}else {
+			logger.info("lists is not null inside update zipcode city name inside controller");
 			return new ResponseEntity<List<CollegeEntity>>(lists, HttpStatus.ACCEPTED);
 		}
 	}

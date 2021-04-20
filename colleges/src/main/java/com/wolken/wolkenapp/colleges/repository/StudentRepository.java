@@ -8,6 +8,6 @@ import com.wolken.wolkenapp.colleges.entity.StudentEntity;
 
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
 	public StudentEntity findByEmailId(String emailId);
-	public List<StudentEntity> getAllByStudentNameOrEmailIdOrPhoneNo(String studentName,String emailId,long phoneNo);
-
+	public List<StudentEntity> findByStudentNameOrEmailIdOrPhoneNo(String studentName,String emailId,long phoneNo);
+	public List<StudentEntity> findByStudentNameOrEmailIdOrDob(String studentName,String emailId, String dob);
 }

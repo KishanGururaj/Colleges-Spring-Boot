@@ -17,4 +17,8 @@ public interface StudentService {
 
 	public List<StudentEntity> getAllByNameOrCityNameOrEmailOrDobOrContactNumberOrZipCode(SaveStudentDTO dto);
 
+	public String saveStudent(StudentEntity studentEntity);
+
+	public StudentEntity saveAll(SaveStudentDTO dto);
+
 }

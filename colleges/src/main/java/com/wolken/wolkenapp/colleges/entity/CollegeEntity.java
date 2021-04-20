@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -29,7 +30,7 @@ public class CollegeEntity {
 	private int zipCode;
 	
 	@OneToOne
-	@JoinColumn
+	@PrimaryKeyJoinColumn
 	@JsonIgnoreProperties("collegeEntity")
 	StudentEntity studentEntity;
 }

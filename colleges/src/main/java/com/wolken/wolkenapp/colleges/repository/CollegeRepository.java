@@ -9,7 +9,7 @@ import com.wolken.wolkenapp.colleges.entity.CollegeEntity;
 public interface CollegeRepository extends JpaRepository<CollegeEntity, Integer>{
 	public List<CollegeEntity>getAllByCityName(String cityName);
 	public CollegeEntity findByCollegeName(String collegeName);
-	
+	public CollegeEntity findByZipCode(int zipCode);
 
 
 }
